@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('checkout'){
             steps {
-                git branch: 'master', url: 'https://github.com/ishaqmdgcp/terraform.git'
+                git branch: 'master', url: 'https://github.com/ishaqmdgcp/gcp-devops.git'
             }
         }
       
@@ -29,13 +29,11 @@ pipeline {
         
          stage('Provision infrastructure') {
 		 steps {   
-			  dir('VPC')
-			 { 
                 sh 'terraform init'
                 sh 'terraform plan'
                 sh 'terraform apply -auto-approve'
                              
-			 }
+			 
             
         }
         }

@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "startupscript_01"
+    bucket = "test-mi"
     prefix      = "backend"
     credentials = "terraform.json"
   }

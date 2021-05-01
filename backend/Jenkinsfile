@@ -20,7 +20,7 @@ pipeline {
                     def tfHome = tool name: 'Terraform'
                     env.PATH = "${tfHome}:${env.PATH}"
                 }
-                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./backend/terraform.json'
+                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./terraform.json'
 		sh 'pwd'
                 sh 'terraform --version'               
                
@@ -29,8 +29,7 @@ pipeline {
         
          stage('Initialize Terraform') {
 		 steps {  
-			  dir('backend')
-			 {
+			  
                 sh 'terraform init'
 			 }
 		 }
@@ -38,8 +37,7 @@ pipeline {
 				 
 	stage('Terraform Plan') {
 		 steps {  
-			  dir('backend')
-			 {
+			  
                 sh 'terraform plan'
 			 }
 		 }
@@ -47,8 +45,7 @@ pipeline {
 				 
 	stage('Terraform Apply') {
 		 steps {  
-			  dir('backend')
-			 {
+			
                 sh 'terraform destroy -auto-approve'
 			 }
 		 }

@@ -49,7 +49,7 @@ pipeline {
 		 steps {  
 			  dir('VPC')
 			 {
-                sh 'terraform apply -auto-approve'
+                sh 'terraform destroy -auto-approve'
 			 }
 		 }
 	}

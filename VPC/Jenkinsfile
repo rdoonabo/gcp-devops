@@ -28,13 +28,15 @@ pipeline {
         }
         
          stage('Provision infrastructure') {
-		 steps {   
+		 steps {  
+			  dir('VPC')
+			 {
                 sh 'terraform init'
                 sh 'terraform plan'
                 sh 'terraform apply -auto-approve'
                              
 			 
-            
+			 }
         }
         }
         

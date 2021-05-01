@@ -12,7 +12,7 @@ resource "google_compute_instance" "vm-instance" {
   zone         = "us-east1-b"
 
   metadata = {
-    startup-script-url = "gs://migcpproject/sunday.sh"
+    startup-script-url = "gs://test-mi/sunday.sh"
   }
 
   boot_disk {

@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "test-mi"
+    bucket = "mi-pipeline-terraform"
     prefix      = "backend"
     credentials = "terraform.json"
   }

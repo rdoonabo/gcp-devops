@@ -11,10 +11,6 @@ resource "google_compute_instance" "vm-instance" {
   machine_type = "f1-micro"
   zone         = "us-east1-b"
 
-  metadata = {
-    startup-script-url = "gs://test-mi/sunday.sh"
-  }
-
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-9"

@@ -1,7 +1,7 @@
 
 variable "google_project_id" {
   description = "- (Required)  Google account project id."
-  default = "migcpproject"
+  default = "nasa7733-lab"
 }
 variable "google_region" {
   default = "us-central1-a"

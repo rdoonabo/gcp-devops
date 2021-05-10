@@ -1,7 +1,7 @@
 # This is the provider used to spin up the gcloud instance
 provider "google" {
  
-  project = "migcpproject"
+  project = "nasa7733-lab"
   region  = "us-east1"
   
 }

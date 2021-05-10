@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('checkout'){
             steps {
-                git branch: 'master', url: 'https://github.com/ishaqmdgcp/terraform.git'
+                git branch: 'main', url: 'https://github.com/ishaqmdgcp/gcp-devops.git'
             }
         }
       
@@ -20,25 +20,39 @@ pipeline {
                     def tfHome = tool name: 'Terraform'
                     env.PATH = "${tfHome}:${env.PATH}"
                 }
-                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./terraform.json'
+                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./VM-VPC/terraform.json'
 		sh 'pwd'
                 sh 'terraform --version'               
                
             }
         }
         
-         stage('Provision infrastructure') {
-		 steps {            
+         stage('Initialize Terraform') {
+		 steps {  
+			  dir('VM-VPC')
+			 {
                 sh 'terraform init'
+			 }
+		 }
+	 }
+				 
+	stage('Terraform Plan') {
+		 steps {  
+			  dir('VM-VPC')
+			 {
                 sh 'terraform plan'
+			 }
+		 }
+	}
+				 
+	stage('Terraform Apply') {
+		 steps {  
+			  dir('VM-VPC')
+			 {
                 sh 'terraform apply -auto-approve'
+			 }
+		 }
+	}
                              
-             
-            
-        }
-        }
-        
-      
-      
-    }
+}
 }

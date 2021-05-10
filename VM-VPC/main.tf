@@ -1,5 +1,5 @@
 provider "google" {
-  project = "migcpproject"
+  project = "nasa7733-lab"
   region  = "europe-west2"
   zone    = "europe-west2-a"
 }

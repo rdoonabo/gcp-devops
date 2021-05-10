@@ -1,6 +1,6 @@
 variable "project" {
   description = "The project ID to deploy to"
-  default = "migcpproject"
+  default = "nasa7733-lab"
 }
 
 variable "region" {

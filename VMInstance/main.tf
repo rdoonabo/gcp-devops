@@ -2,6 +2,7 @@
 provider "google" {
  
   project = "nasa7733-lab"
+  credentials = file("terraform.json")
   region  = "us-east1"
   
 }

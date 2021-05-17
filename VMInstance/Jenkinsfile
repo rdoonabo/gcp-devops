@@ -40,7 +40,7 @@ pipeline {
 		 steps {  
 			  dir('VMInstance')
 			 {
-                sh 'terraform plann'
+                sh 'terraform plan'
 			 }
 		 }
 	}
@@ -49,7 +49,7 @@ pipeline {
 		 steps {  
 			  dir('VMInstance')
 			 {
-                sh 'terraform destroy -auto-approve'
+                sh 'terraform destroyy -auto-approve'
 			 }
 		 }
 	}

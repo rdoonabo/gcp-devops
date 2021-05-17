@@ -32,8 +32,8 @@ pipeline {
 			 dir ('gke-node')
 			 {
                 sh 'terraform init'
-                sh 'terraform plann'
-                sh 'terraform destroy -auto-approve'
+                sh 'terraform plan'
+                sh 'terraform apply -auto-approve'
                              
              
 			 } 

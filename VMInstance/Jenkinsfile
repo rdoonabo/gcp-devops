@@ -40,7 +40,7 @@ pipeline {
 		 steps {  
 			  dir('VMInstance')
 			 {
-                sh 'terraform plan'
+                sh 'terraform plann'
 			 }
 		 }
 	}

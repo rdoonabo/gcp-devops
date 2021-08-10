@@ -36,16 +36,8 @@ pipeline {
 		 }
 	 }
 				 
-	stage('Terraform Plan') {
-		 steps {  
-			  dir('VMInstance')
-			 {
-                sh 'terraform plan'
-			 }
-		 }
-	}
-				 
-	stage('Terraform Apply') {
+					 
+	stage('Terraform Action') {
 		 steps {  
 			  dir('VMInstance')
 			 {

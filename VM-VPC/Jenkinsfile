@@ -49,7 +49,7 @@ pipeline {
 		 steps {  
 			  dir('VM-VPC')
 			 {
-                sh 'terraform destroy $TF_APPROVE'
+                sh 'terraform $TF_ACTIONS $TF_APPROVE'
 			 }
 		 }
 	}

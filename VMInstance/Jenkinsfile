@@ -42,6 +42,8 @@ pipeline {
 			  dir('VMInstance')
 			 {
                 sh 'terraform $TF_ACTION $TF_APPROVE'
+				 sh 'sleep 120
+				 sh 'terrform destroy -auto-approve'
 			 }
 		 }
 	}

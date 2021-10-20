@@ -41,22 +41,22 @@ pipeline {
 		 steps {  
 			  dir('VMInstance')
 			 {
-                //sh 'terraform $TF_ACTION $TF_APPROVE'
-		 sh 'terraform plan'
-		 sh 'terraform apply -auto-approve'
+                sh 'terraform $TF_ACTION $TF_APPROVE'
+		// sh 'terraform plan'
+		 //sh 'terraform apply -auto-approve'
 				
 			 }
 		 }
 	}
       
-	     stage('Initialize Destroy') {
-		 steps {  
-			  dir('VMInstance')
-			 {
-                sh 'sleep 60'
-		sh 'terraform destroy -auto-approve'
-			 }
-		 }
+	     //stage('Initialize Destroy') {
+		// steps {  
+		//	  dir('VMInstance')
+		//	 {
+                //sh 'sleep 60'
+		//sh 'terraform destroy -auto-approve'
+		//	 }
+		 //}
 	 }
 }
 }

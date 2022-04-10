@@ -33,7 +33,7 @@ pipeline {
 	    stage('PACKER') {
 		    steps{
 			    scripts{
-				    build jon: 'PACKER'
+				    build json: 'PACKER'
 				    //parametes: [
 					//    [$class: 'StringParameterValue', name 'FROM_BUILD', value: "${BUILD_NUMBER}" ]
 					  //  ]

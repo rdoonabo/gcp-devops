@@ -30,7 +30,7 @@ pipeline {
             }
         }
 	    
-	    Stage('PACKER') {
+	    stage('PACKER') {
 		    steps{
 			    scripts{
 				    build jon: 'PACKER'

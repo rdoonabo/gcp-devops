@@ -19,7 +19,8 @@ pipeline {
 	     stage('PACKER') {
 		    steps{
 			    scripts{
-				    build (job: 'PACKER')
+				    //build (job: 'PACKER')
+				    build(job: 'pipelines/PACKER', wait: false)
 				    //parametes: [
 					//    [$class: 'StringParameterValue', name 'FROM_BUILD', value: "${BUILD_NUMBER}" ]
 					  //  ]

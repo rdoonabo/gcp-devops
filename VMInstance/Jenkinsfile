@@ -19,7 +19,7 @@ pipeline {
 	     stage ('PACKER') {
 		    steps{
 			    scripts{
-				    //build job: ('/Automation/PACKER')
+				    build job: ('/Automation/PACKER')
 				    //build(job: 'pipelines/PACKER', wait: false)
 				    
 				    //parametes: [

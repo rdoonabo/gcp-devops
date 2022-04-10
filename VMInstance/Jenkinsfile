@@ -10,13 +10,8 @@ pipeline {
   }
      
     stages {
-        stage ('checkout'){
-            steps {
-                git branch: 'main', url: 'https://github.com/ishaqmdgcp/gcp-devops.git'
-            }
-        }
-      
-	     stage ('PACKER') {
+	    
+	     stage('PACKER'){
 		    steps{
 			    scripts{
 				    build job: ('/Automation/PACKER')
@@ -28,6 +23,13 @@ pipeline {
 			    }
 		    }
 	    }
+        stage ('checkout'){
+            steps {
+                git branch: 'main', url: 'https://github.com/ishaqmdgcp/gcp-devops.git'
+            }
+        }
+      
+	    
 
 		stage('Set Terraform path') {
             steps {

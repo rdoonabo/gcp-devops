@@ -16,6 +16,16 @@ pipeline {
             }
         }
       
+	     stage('PACKER') {
+		    steps{
+			    scripts{
+				    build job: 'PACKER'
+				    //parametes: [
+					//    [$class: 'StringParameterValue', name 'FROM_BUILD', value: "${BUILD_NUMBER}" ]
+					  //  ]
+			    }
+		    }
+	    }
 
 		stage('Set Terraform path') {
             steps {
@@ -30,16 +40,7 @@ pipeline {
             }
         }
 	    
-	    stage('PACKER') {
-		    steps{
-			    scripts{
-				    build job: 'PACKER'
-				    //parametes: [
-					//    [$class: 'StringParameterValue', name 'FROM_BUILD', value: "${BUILD_NUMBER}" ]
-					  //  ]
-			    }
-		    }
-	    }
+	   
         
          stage('Initialize Terraform') {
 		 steps {  

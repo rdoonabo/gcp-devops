@@ -16,11 +16,12 @@ pipeline {
             }
         }
       
-	     stage('PACKER') {
+	     stage ('PACKER') {
 		    steps{
 			    scripts{
-				    //build (job: 'PACKER')
-				    build(job: 'pipelines/PACKER', wait: false)
+				    //build job: ('/Automation/PACKER')
+				    //build(job: 'pipelines/PACKER', wait: false)
+				    
 				    //parametes: [
 					//    [$class: 'StringParameterValue', name 'FROM_BUILD', value: "${BUILD_NUMBER}" ]
 					  //  ]

@@ -15,12 +15,19 @@ resource "google_compute_instance" "vm_instance" {
       image = "debian-cloud/debian-9"
     }
   }
+  network_interface {
+    network  = google_compute_network.vpc_network.id
+
+    access_config {
+      // Ephemeral IP
+    }
+  }
   }
   resource "google_compute_subnetwork" "subnetwork" {
   name          = "ravimi-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
   region        = "europe-west2"
-  network       = google_compute_network.vpc_network.id
+  
  
    }
   resource "google_compute_network" "vpc_network" {

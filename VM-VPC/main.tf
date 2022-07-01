@@ -24,10 +24,10 @@ resource "google_compute_instance" "vm_instance" {
   }
   }
   resource "google_compute_subnetwork" "subnetwork" {
-  name          = "ravimi-subnetwork"
+  name          = "ravi-mi-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
   region        = "europe-west2"
-  
+  network  = google_compute_network.vpc_network.id
  
    }
   resource "google_compute_network" "vpc_network" {

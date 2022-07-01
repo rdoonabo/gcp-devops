@@ -2,7 +2,7 @@ provider "google" {
   project = "ravi-mi"
   credentials = file("terraform.json")
   region  = "europe-west2"
-  zone    = "europe-west2-a"
+  zone    = "europe-west2-b"
 }
 
 resource "google_compute_instance" "vm_instance" {

@@ -1,7 +1,8 @@
 pipeline {
     agent any
-
-
+	tools {
+       terraform 'terraform v1.2.4'
+       }
     environment {
     SVC_ACCOUNT_KEY = credentials('terraform-auth')
   }

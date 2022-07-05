@@ -16,14 +16,15 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
   network_interface {
-    network  = google_compute_network.vpc_network.id
-    subnetwork = "ravi-mi-subnetwork"
-
+   # nenetwortwork  = google_compute_network.vpc_network.id
+    #subnetwork = "ravi-mi-subnetwork"
+network = "default"
     access_config {
       // Ephemeral IP
     }
   }
   }
+/*
   resource "google_compute_subnetwork" "subnetwork" {
   name          = "ravi-mi-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
@@ -37,6 +38,7 @@ resource "google_compute_instance" "vm_instance" {
   auto_create_subnetworks = false
   mtu                     = 1460
 }
-   
+
+*/
 
 

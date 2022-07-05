@@ -18,7 +18,7 @@ resource "google_compute_instance" "vm_instance" {
   network_interface {
    # nenetwortwork  = google_compute_network.vpc_network.id
     #subnetwork = "ravi-mi-subnetwork"
-network = "default"
+network = "ravi"
     access_config {
       // Ephemeral IP
     }

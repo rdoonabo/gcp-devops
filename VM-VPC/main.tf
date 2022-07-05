@@ -1,8 +1,8 @@
 provider "google" {
   project = "ravi-mi"
   credentials = file("terraform.json")
-  region  = "europe-west2"
-  zone    = "europe-west2-a"
+  region  = "us-central1"
+  zone    = "us-central1-a"
 }
 
 resource "google_compute_instance" "vm_instance" {
@@ -27,7 +27,7 @@ resource "google_compute_instance" "vm_instance" {
   resource "google_compute_subnetwork" "subnetwork" {
   name          = "ravi-mi-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
-  region        = "europe-west2"
+  region        = "us-central1"
   network  = google_compute_network.vpc_network.id
  
    }

@@ -1,16 +1,16 @@
 # This is the provider used to spin up the gcloud instance
 provider "google" {
  
-  project = "midevop"
+  project = "ravi-mi"
   credentials = file("terraform.json")
-  region  = "us-east1"
+  region  = "us-central1"
   
 }
 
 resource "google_compute_instance" "vm-instance" {
   name         = "test"
   machine_type = "f1-micro"
-  zone         = "us-east1-b"
+  zone         = "us-central-c"
 
 
   boot_disk {
@@ -20,7 +20,7 @@ resource "google_compute_instance" "vm-instance" {
   }
     
   network_interface {
-    network = "default"
+    network = "ravi"
 
     access_config {
       // Ephemeral IP

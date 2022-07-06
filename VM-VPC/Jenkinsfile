@@ -32,7 +32,7 @@ pipeline {
 			 {
                 sh 'terraform init'
 		sh 'terraform plan'
-		sh 'terraform destory --auto-approve'		 
+		sh 'terraform destroy --auto-approve'		 
 			 }
 		 }
 	 }

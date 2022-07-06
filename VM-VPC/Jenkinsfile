@@ -37,16 +37,6 @@ pipeline {
 		 }
 	 }
 				  
-	stage('Terraform Action') {
-		 steps {  
-			  dir('VM-VPC')
-			 {
-                sh 'terraform $TF_ACTION $TF_APPROVE'
-				
-		
-			 }
-		 }
-	}
-                             
+	                      
 }
 }

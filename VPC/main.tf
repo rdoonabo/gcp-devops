@@ -11,7 +11,8 @@ network_interface {
      subnetwork = "ravi-mi-subnetwork"
      access_config {
       // Ephemeral IP
-
+     }
+ }
  resource "google_compute_subnetwork" "subnetwork" {
   name          = "ravi-mi-subnetwork"
   ip_cidr_range = "10.3.0.0/16"
@@ -24,3 +25,4 @@ network_interface {
   name                    = "drk"
   auto_create_subnetworks = false
   mtu                     = 1460
+  }

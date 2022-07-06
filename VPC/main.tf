@@ -4,6 +4,6 @@ provider "google" {
   zone    = "us-central1-a"
 }
 resource "google_compute_network" "vpc_network" {
-  name = "default"
+  name = "drk-vpc"
 }
 

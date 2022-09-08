@@ -17,7 +17,7 @@ resource "google_compute_instance" "vm_instance" {
   } 
   } 
   resource "google_compute_network" "vpc_network" {
-  name                    = "drk-network"
+  name  = "drk-network"
 }
 
 

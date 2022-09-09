@@ -22,6 +22,7 @@ pipeline {
                 }
                 sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./terraform.json'
 		sh 'pwd'
+		sh 'ls'    
                 sh 'terraform --version'               
                
             }

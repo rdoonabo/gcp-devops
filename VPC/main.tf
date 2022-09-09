@@ -3,9 +3,8 @@ provider "google" {
   region  = "us-central1"
   zone    = "us-central1-a"
 }
-resource "google_compute_network" "vpc_network" {
-  project                 = "ravi-mi"
-  name                    = "rrr"
+ resource "google_compute_network" "vpc_network" {
+  name  = "drk-network"
 }
 
 
